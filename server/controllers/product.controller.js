@@ -19,6 +19,14 @@ module.exports = {
         }).catch((error) => {
             console.log(error)
         })
+    },
+    getOneProduct: (req,res) => {
+        Product.findById(req.params.id)
+        .then((results) => {
+            res.json(results)
+        }).catch((error) => {
+            console.log(error)
+        })
     }
 
 }

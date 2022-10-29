@@ -4,8 +4,9 @@ import ProductList from '../components/ProductList'
 
 const Main = () => {
   return (
-    <div className='container mx-auto mt-2'>
+    <div className='col-6 mx-auto mt-2'>
         <Form />
+        <hr className='"border border-black border-2 opacity-50 my-4'></hr>
         <ProductList />
     </div>
   )
