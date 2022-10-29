@@ -11,5 +11,14 @@ module.exports = {
         }).catch((error) => {
             console.log(error)
         })
+    },
+    getAllProducts: (req,res) => {
+        Product.find()
+        .then((results) => {
+            res.json(results)
+        }).catch((error) => {
+            console.log(error)
+        })
     }
+
 }

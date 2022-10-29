@@ -19,12 +19,14 @@ const Form = () => {
         }).catch((err) => {
             console.log(err)
         })
+        setTitle('');
+        setPrice('');
+        setDescription('');
     }
 
   return (
-    <div className='col col-4 mx-auto mt-2'>
+    <div>
         <form className='d-flex flex-column justify-content-center' onSubmit={submitHandler}>
-            <h1 className='mb-4 text-center'>Product Manager</h1>
             <div className='p-2 mb-3 bg-light border rounded'>
                 <label className='form-label'>Title:</label>
                 <input className='form-control' type='text' onChange={(e)=>{setTitle(e.target.value)}} value={title}/>
