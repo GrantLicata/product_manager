@@ -1,9 +1,9 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Form from './components/Form';
 import NavBar from './components/NavBar';
 import Main from './views/Main';
-import ProductPage from './views/ProductPage';
+import Detail from './views/Detail';
+import Edit from './components/Edit';
 
 function App() {
   return (
@@ -12,7 +12,8 @@ function App() {
         <NavBar />
         <Routes>
           <Route path="/" element={<Main />}/>
-          <Route path="/oneProduct/:id" element={<ProductPage />}/>
+          <Route path="/oneProduct/:id" element={<Detail />}/>
+          <Route path="/update/:id" element={<Edit />}/>
         </Routes>
       </BrowserRouter>
 

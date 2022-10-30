@@ -26,6 +26,7 @@ const Form = () => {
 
   return (
     <div>
+        <h3 className='text-center text-secondary mb-3'>New Product Form</h3>
         <form className='d-flex flex-column justify-content-center' onSubmit={submitHandler}>
             <div className='p-2 mb-3 bg-light border rounded'>
                 <label className='form-label'>Title:</label>

@@ -27,6 +27,14 @@ module.exports = {
         }).catch((error) => {
             console.log(error)
         })
+    },
+    updateProduct: (req,res) => {
+        Product.updateOne({id: req.params.id}, req.body)
+        .then((results) => {
+            res.json(results)
+        }).catch((error) => {
+            console.log(error)
+        })
     }
 
 }
