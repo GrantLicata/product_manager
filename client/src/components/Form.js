@@ -2,11 +2,12 @@ import React from 'react';
 import { useState } from 'react';
 import axios from 'axios'
 
-const Form = () => {
+const Form = (props) => {
 
     const [title,setTitle] = useState('')
     const [price,setPrice] = useState('')
     const [description,setDescription] = useState('')
+    const {productList, setProductList} = props
 
     const submitHandler = (e) => {
         e.preventDefault()
@@ -16,6 +17,11 @@ const Form = () => {
             description: description
         }).then((res) => {
             console.log(res)
+            //Using an updater function here allows for the most recent copy of state to be applied in the list.
+            //Info on updater functions -->  https://reactjs.org/docs/react-component.html#setstate
+            setProductList((prevState) => (
+                [...prevState, res.data]
+            ))
         }).catch((err) => {
             console.log(err)
         })

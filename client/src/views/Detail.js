@@ -25,6 +25,16 @@ const Detail = () => {
         navigate(`/update/${product._id}`)
     }
 
+    const deleteHandler = () => {
+        axios.delete(`http://localhost:8000/api/delete/${id}`)
+        .then((res) => {
+            console.log('Delete was successfull')
+            navigate('/')
+        }).catch((err) => {
+            console.log(err)
+        })
+    }
+
     return (
         <div className='container text-center'>
             {/* Product information */}
@@ -34,7 +44,7 @@ const Detail = () => {
 
             {/* Edit and delete buttons */}
             <button className='btn btn-primary me-3 py-1' onClick={editNavigation}>Edit</button>
-            <button className='btn btn-danger py-1'>Delete</button>
+            <button className='btn btn-danger py-1' onClick={deleteHandler}>Delete</button>
         </div>
     )
 }
